@@ -1,2 +1,2 @@
 # APIMTutorial
-Resources for the Azure API Management Tutorial.
+Resources for the <a href="https://appliedcloudsystems.com/documents/Azure%20API%20Management%20Tutorial.pdf">Azure API Management Tutorial</a>.
