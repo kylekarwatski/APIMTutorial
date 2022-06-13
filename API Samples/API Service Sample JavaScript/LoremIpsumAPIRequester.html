@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        var params = {
+            // Request parameters
+            "length": "100",
+            "unit": "words",
+            "paragraphs": "1",
+        };
+      
+        $.ajax({
+            url: "https://apim-demo-eastus-dev.azure-api.net/loremipsum/v1/?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","INSERT_KEY_HERE");
+                xhrObj.setRequestHeader("Access-Control-Allow-Origin","*");
+            },
+            type: "GET",
+            // Request body
+            data: "",
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+</script>
+</body>
+</html>
